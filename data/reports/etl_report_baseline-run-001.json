@@ -1,0 +1,100 @@
+{
+  "batch_id": "baseline-run-001",
+  "mode": "full",
+  "dry_run": false,
+  "force": false,
+  "db_dialect": "sqlite",
+  "storage_backend": "local",
+  "status": "SUCCESS",
+  "timings_ms": {
+    "extract": 39.94,
+    "bronze": 1.61,
+    "validate": 679.26,
+    "transform": 120.57,
+    "silver_load": 313.82,
+    "gold_refresh": 141.7,
+    "total_pipeline": 1374.4
+  },
+  "source_file_name": "zomato_cleaned.csv",
+  "source_file_hash": "b7b827b6a61a23b281af014b5622a0f5cc979052b107269fe54e841a233eb27e",
+  "source_file_size": 2184843,
+  "extracted_rows": 9550,
+  "bronze": {
+    "status": "STORED",
+    "backend": "local",
+    "uri": "/working_dir/c_21dfa255246f8fbd/artifacts/file_generation/ttl=63d/intermediate/etl_project/data/bronze/zomato/2026/11/19/batch_baseline-run-001/zomato_cleaned.csv",
+    "metadata_uri": "/working_dir/c_21dfa255246f8fbd/artifacts/file_generation/ttl=63d/intermediate/etl_project/data/bronze/zomato/2026/11/19/batch_baseline-run-001/metadata.json"
+  },
+  "accepted_rows": 9550,
+  "rejected_rows": 0,
+  "data_quality": {
+    "total_issues": 511,
+    "issues_by_severity": {
+      "INFO": 14,
+      "WARNING": 497,
+      "ERROR": 0,
+      "CRITICAL": 0
+    },
+    "issues_by_type": {
+      "MISSING_CUISINES": 9,
+      "MISSING_COORDINATES": 497,
+      "DUPLICATE_CUISINE_IN_ROW": 5
+    },
+    "exact_duplicates": 0,
+    "duplicate_restaurant_ids": 0
+  },
+  "silver_transform": {
+    "countries": 15,
+    "cities": 141,
+    "locations": 9453,
+    "rating_tiers": 6,
+    "restaurants": 9550,
+    "cuisines": 145,
+    "restaurant_cuisines": 19703
+  },
+  "silver_load": {
+    "staging_upserted": 9550,
+    "countries_inserted": 15,
+    "cities_inserted": 141,
+    "locations_inserted": 9453,
+    "rating_tiers_inserted": 6,
+    "restaurants_inserted": 9550,
+    "restaurants_updated": 0,
+    "restaurants_unchanged": 0,
+    "cuisines_inserted": 145,
+    "restaurant_cuisines_inserted": 19703,
+    "restaurant_cuisines_deleted": 0,
+    "table_counts": {
+      "stg_zomato_cleaned": 9550,
+      "countries": 15,
+      "cities": 141,
+      "locations": 9453,
+      "rating_tiers": 6,
+      "restaurants": 9550,
+      "cuisines": 145,
+      "restaurant_cuisines": 19703
+    }
+  },
+  "gold_layer": {
+    "views_verified": {
+      "v_restaurant_explorer": 9550,
+      "gold_restaurant_search": 9550,
+      "gold_city_restaurant_stats": 141,
+      "gold_country_restaurant_stats": 15,
+      "gold_cuisine_stats": 145,
+      "gold_price_range_stats": 4,
+      "gold_rating_distribution": 33,
+      "gold_geographic_coverage": 141
+    },
+    "query_timings_ms": {
+      "v_restaurant_explorer": 5.42,
+      "gold_restaurant_search": 30.05,
+      "gold_city_restaurant_stats": 13.88,
+      "gold_country_restaurant_stats": 9.78,
+      "gold_cuisine_stats": 27.23,
+      "gold_price_range_stats": 4.88,
+      "gold_rating_distribution": 7.77,
+      "gold_geographic_coverage": 10.96
+    }
+  }
+}

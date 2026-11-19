@@ -1,0 +1,46 @@
+{
+  "batch_id": "dryrun-003",
+  "mode": "full",
+  "dry_run": true,
+  "force": false,
+  "db_dialect": "sqlite",
+  "storage_backend": "local",
+  "status": "SUCCESS",
+  "timings_ms": {
+    "extract": 37.02,
+    "validate": 678.62,
+    "transform": 115.77,
+    "total_pipeline": 832.1
+  },
+  "source_file_name": "zomato_cleaned.csv",
+  "source_file_hash": "b7b827b6a61a23b281af014b5622a0f5cc979052b107269fe54e841a233eb27e",
+  "source_file_size": 2184843,
+  "extracted_rows": 9550,
+  "accepted_rows": 9550,
+  "rejected_rows": 0,
+  "data_quality": {
+    "total_issues": 511,
+    "issues_by_severity": {
+      "INFO": 14,
+      "WARNING": 497,
+      "ERROR": 0,
+      "CRITICAL": 0
+    },
+    "issues_by_type": {
+      "MISSING_CUISINES": 9,
+      "MISSING_COORDINATES": 497,
+      "DUPLICATE_CUISINE_IN_ROW": 5
+    },
+    "exact_duplicates": 0,
+    "duplicate_restaurant_ids": 0
+  },
+  "silver_transform": {
+    "countries": 15,
+    "cities": 141,
+    "locations": 9453,
+    "rating_tiers": 6,
+    "restaurants": 9550,
+    "cuisines": 145,
+    "restaurant_cuisines": 19703
+  }
+}
